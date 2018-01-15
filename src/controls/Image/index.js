@@ -52,9 +52,9 @@ class ImageControl extends Component {
     this.signalExpanded = false;
   }
 
-  addImage: Function = (src: string, height: string, width: string, alt: string): void => {
+  addImage: Function = (src: string, height: string, width: string, alt: string, href: string): void => {
     const { editorState, onChange, config } = this.props;
-    const entityData = { src, height, width };
+    const entityData = { src, height, width, href };
     if (config.alt.present) {
       entityData.alt = alt;
     }

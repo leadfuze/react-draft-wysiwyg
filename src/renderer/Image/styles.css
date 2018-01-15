@@ -37,3 +37,11 @@
 .rdw-image-alignment-options-popup-right {
   right: 0;
 }
+
+.rdw-image-link-tip{
+  position: absolute;
+  background: white;
+  color: gray;
+  border: 1px solid #eee;
+  padding: 2px 6px;
+}

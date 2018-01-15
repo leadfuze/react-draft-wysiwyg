@@ -20,6 +20,7 @@ class LayoutComponent extends Component {
 
   state: Object = {
     imgSrc: '',
+    linkUrl: '',
     dragEnter: false,
     uploadHighlighted: this.props.config.uploadEnabled && !!this.props.config.uploadCallback,
     showImageLoading: false,
@@ -87,7 +88,7 @@ class LayoutComponent extends Component {
   };
 
   addImageFromState: Function = (): void => {
-    const { imgSrc, alt } = this.state;
+    const { imgSrc, alt, linkUrl } = this.state;
     let { height, width } = this.state;
     const { onChange } = this.props;
     if (!isNaN(height)) {
@@ -96,7 +97,7 @@ class LayoutComponent extends Component {
     if (!isNaN(width)) {
       width += 'px';
     }
-    onChange(imgSrc, height, width, alt);
+    onChange(imgSrc, height, width, alt, linkUrl);
   };
 
   showImageURLOption: Function = (): void => {
@@ -160,6 +161,7 @@ class LayoutComponent extends Component {
   renderAddImageModal(): Object {
     const {
       imgSrc,
+      linkUrl,
       uploadHighlighted,
       showImageLoading,
       dragEnter,
@@ -270,6 +272,16 @@ class LayoutComponent extends Component {
           />
           <span className="rdw-image-mandatory-sign">{altConf.mandatory && '*'}</span>
         </div>}
+        <div className="rdw-image-modal-url-section">
+          <input
+            className="rdw-image-modal-url-input"
+            placeholder="Link URL"
+            name="linkUrl"
+            onChange={this.updateValue}
+            onBlur={this.updateValue}
+            value={linkUrl}
+          />
+        </div>
         <div className="rdw-image-modal-size">
           &#8597;&nbsp;
           <input
