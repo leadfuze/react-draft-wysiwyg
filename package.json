@@ -23,7 +23,7 @@
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "draft-js": "^0.10.4",
-    "draftjs-to-html": "^0.8.2",
+    "draftjs-to-html": "github:leadfuze/draftjs-to-html",
     "draftjs-to-markdown": "^0.5.1",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
